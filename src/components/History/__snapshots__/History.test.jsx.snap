@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Display component renders Display 1`] = `
+exports[`History component renders History 1`] = `
 <ContextProvider
   value={
     Object {
@@ -15,6 +15,6 @@ exports[`Display component renders Display 1`] = `
     }
   }
 >
-  <Display />
+  <History />
 </ContextProvider>
 `;

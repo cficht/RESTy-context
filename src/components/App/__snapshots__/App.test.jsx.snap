@@ -2,7 +2,20 @@
 
 exports[`App component renders App 1`] = `
 <Fragment>
-  <Form />
-  <Display />
+  <main
+    className="Main"
+  >
+    <article
+      className="Left"
+    >
+      <History />
+    </article>
+    <article
+      className="Right"
+    >
+      <Form />
+      <Display />
+    </article>
+  </main>
 </Fragment>
 `;

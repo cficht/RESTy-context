@@ -7,7 +7,8 @@ const initialState = {
   url: '',
   method: '',
   body: '',
-  res: {}
+  res: {},
+  requests: []
 };
 
 export function reducer(state, action) {
@@ -20,6 +21,8 @@ export function reducer(state, action) {
       return { ...state, body: action.payload };
     case 'SET_RES':
       return { ...state, res: action.payload };
+    case 'ADD_REQUESTS':
+      return { ...state, requests: [...state.requests, action.payload] };
     default:
       return state;
   }
@@ -67,4 +70,9 @@ export const useBody = () => {
 export const useRes = () => {
   const { res } = useGlobalState();
   return res;
+};
+
+export const useRequests = () => {
+  const { requests } = useGlobalState();
+  return requests;
 };

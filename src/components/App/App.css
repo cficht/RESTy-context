@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+.Main {
+  display: flex;
+  background-color: blue;
+
+  .Left{
+    width: 25%;
+    background-color: red;
+  }
+
+  .Right{
+    width: 75%;
+    background-color: green;
+  }
+}
