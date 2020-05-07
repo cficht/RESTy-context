@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Display component renders Display 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "dispatch": [Function],
+      "state": Object {
+        "body": "",
+        "method": "",
+        "res": Object {},
+        "url": "",
+      },
+    }
+  }
+>
+  <Display />
+</ContextProvider>
+`;

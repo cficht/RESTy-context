@@ -20,7 +20,7 @@
 
 ## components
 - [] - App
-- [] - Form
+- [X] - Form
 - [] - Display
 - [] - History
 - [] - Header
@@ -30,8 +30,8 @@
 - [] - FormProvider
 
 ## services
-- [] - api (fetch(url, object with headers, body))
-  * [] - fetchResponse
+- [X] - api (fetch(url, object with headers, body))
+  * [X] - fetchResponse
 
 # --------------------
 
