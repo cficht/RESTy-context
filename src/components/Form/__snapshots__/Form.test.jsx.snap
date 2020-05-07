@@ -8,6 +8,7 @@ exports[`Form component renders Form 1`] = `
       "state": Object {
         "body": "",
         "method": "",
+        "res": Object {},
         "url": "",
       },
     }

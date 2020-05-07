@@ -1,8 +1,10 @@
 import React from 'react';
-import { useUrl, useDispatch, useBody } from '../../hooks/ResponseProvider';
+import { useUrl, useDispatch, useBody, useMethod } from '../../hooks/ResponseProvider';
+import { fetchResponse } from '../../services/request';
 
 const Form = () => {
   const url = useUrl();
+  const method = useMethod();
   const body = useBody();
   const dispatch = useDispatch();
 
@@ -14,13 +16,18 @@ const Form = () => {
         return dispatch({ type: 'SET_METHOD', payload: target.value });
       case 'body':
         return dispatch({ type: 'SET_BODY', payload: target.value });
-
     }
+  };
+
+  const handleSubmit = () => {
+    event.preventDefault();
+    fetchResponse(url, method, body)
+      .then(res => dispatch({ type: 'SET_RES', payload: res }));
   };
 
   return (
     <section>
-      <form onSubmit={() => {}}>
+      <form onSubmit={handleSubmit}>
         <input type="text" name="url" value={url} onChange={handleChange}></input>
         <div>
           <label><input type="radio" name="method" value="GET" onChange={handleChange} />GET</label>

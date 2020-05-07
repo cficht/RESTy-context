@@ -6,7 +6,8 @@ const ResponseContext = createContext();
 const initialState = {
   url: '',
   method: '',
-  body: ''
+  body: '',
+  res: {}
 };
 
 export function reducer(state, action) {
@@ -17,6 +18,8 @@ export function reducer(state, action) {
       return { ...state, method: action.payload };
     case 'SET_BODY':
       return { ...state, body: action.payload };
+    case 'SET_RES':
+      return { ...state, res: action.payload };
     default:
       return state;
   }
@@ -59,4 +62,9 @@ export const useMethod = () => {
 export const useBody = () => {
   const { body } = useGlobalState();
   return body;
+};
+
+export const useRes = () => {
+  const { res } = useGlobalState();
+  return res;
 };
