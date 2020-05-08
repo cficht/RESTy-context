@@ -11,6 +11,12 @@ const initialState = {
   requests: []
 };
 
+const match = (newRequest, storedRequests) => {
+  return storedRequests.find(request => {
+    if(request.url === newRequest.url && request.method === newRequest.method && request.body === newRequest.body) return true;
+  });
+};
+
 export function reducer(state, action) {
   switch(action.type) {
     case 'SET_URL':
@@ -22,6 +28,7 @@ export function reducer(state, action) {
     case 'SET_RES':
       return { ...state, res: action.payload };
     case 'ADD_REQUESTS':
+      if(match(action.payload, state.requests)) return { ...state, requests: [...state.requests] };  
       localStorage.setItem('requests', JSON.stringify([...state.requests, action.payload]));
       return { ...state, requests: [...state.requests, action.payload] };    
     case 'LOAD_REQUESTS':

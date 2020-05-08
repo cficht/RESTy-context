@@ -1,22 +1,13 @@
 import React from 'react';
-import { useUrl, useDispatch, useBody, useMethod } from '../../hooks/ResponseProvider';
+import { useGlobalState, useDispatch } from '../../hooks/ResponseProvider';
 import { fetchResponse } from '../../services/request';
 
 const Form = () => {
-  const url = useUrl();
-  const method = useMethod();
-  const body = useBody();
+  const { url, method, body } = useGlobalState();
   const dispatch = useDispatch();
 
   const handleChange = ({ target }) => {
-    switch(target.name) {
-      case 'url':
-        return dispatch({ type: 'SET_URL', payload: target.value });
-      case 'method':
-        return dispatch({ type: 'SET_METHOD', payload: target.value });
-      case 'body':
-        return dispatch({ type: 'SET_BODY', payload: target.value });
-    }
+    dispatch({ type: target.name, payload: target.value });
   };
 
   const handleSubmit = () => {
@@ -33,15 +24,15 @@ const Form = () => {
   return (
     <section>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="url" value={url} onChange={handleChange}></input>
+        <input type="text" name="SET_URL" value={url} onChange={handleChange}></input>
         <div>
-          <label><input type="radio" name="method" value="GET" onChange={handleChange} />GET</label>
-          <label><input type="radio" name="method" value="POST" onChange={handleChange} />POST</label>
-          <label><input type="radio" name="method" value="PUT" onChange={handleChange} />PUT</label>
-          <label><input type="radio" name="method" value="PATCH" onChange={handleChange} />PATCH</label>
-          <label><input type="radio" name="method" value="DELETE" onChange={handleChange} />DELETE</label>
+          <label><input type="radio" name="SET_METHOD" value="GET" onChange={handleChange} />GET</label>
+          <label><input type="radio" name="SET_METHOD" value="POST" onChange={handleChange} />POST</label>
+          <label><input type="radio" name="SET_METHOD" value="PUT" onChange={handleChange} />PUT</label>
+          <label><input type="radio" name="SET_METHOD" value="PATCH" onChange={handleChange} />PATCH</label>
+          <label><input type="radio" name="SET_METHOD" value="DELETE" onChange={handleChange} />DELETE</label>
         </div>
-        <textarea name="body" value={body} onChange={handleChange}></textarea>
+        <textarea name="SET_BODY" value={body} onChange={handleChange}></textarea>
         <button type="submit">Submit</button>
       </form>   
     </section>

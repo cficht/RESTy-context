@@ -46,9 +46,11 @@
 - History
 - Header
 - localStorage
-
 - No duplicates
-- Auth
+
+- Click to load
+- Auth (Dropdown?)
+- handlers in Provider?
 - Styling
 - Hook Testing
 - Service Testing
