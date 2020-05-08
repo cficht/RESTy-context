@@ -6,11 +6,15 @@ exports[`Display component renders Display 1`] = `
     Object {
       "dispatch": [Function],
       "state": Object {
+        "auth": "none",
         "body": "",
         "method": "",
+        "password": "",
         "requests": Array [],
         "res": Object {},
+        "token": "",
         "url": "",
+        "username": "",
       },
     }
   }
