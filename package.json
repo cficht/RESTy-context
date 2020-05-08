@@ -25,6 +25,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "base-64": "^0.1.0",
     "react-json-view": "^1.19.1"
   },
   "devDependencies": {

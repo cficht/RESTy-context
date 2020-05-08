@@ -1,9 +1,10 @@
-export const fetchResponse = (url, method, body) => {
+export const fetchResponse = (url, method, body, headers) => {
   const reqObject = {
     method: method,
     headers: method === ('GET' || 'DELETE') ? {} : { 'Content-Type': 'application/json' },
     body: method === ('GET' || 'DELETE') ? null : body
   };
+  if(headers) reqObject.headers['Authorization'] = headers;
   return fetch(url, reqObject)
     .then(res => {
       let headers = {};

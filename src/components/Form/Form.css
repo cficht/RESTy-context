@@ -66,5 +66,9 @@
     input{
       margin: 10px;
     }
+
+    input[name=SET_TOKEN]{
+      width: 100%;
+    }
   }
 }

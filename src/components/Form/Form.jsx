@@ -12,8 +12,14 @@ const Form = () => {
   };
 
   const handleSubmit = () => {
+    const base64 = require('base-64');
+    let headers;
+
     event.preventDefault();
-    fetchResponse(url, method, body)
+    // if(auth === 'basic') requestObject.headers['Authorization'] = `Basic ${base64.encode(`${username}:${password}`)}`;
+    if(auth === 'basic') headers['Authorization'] = `Basic ${base64.encode(`${username}:${password}`)}`;
+    if(auth === 'bearer') headers['Authorization'] = `Bearer ${token}`;
+    fetchResponse(url, method, body, headers)
       .then(res => {
         if(res.ok) {
           dispatch({ type: 'SET_RES', payload: res });
