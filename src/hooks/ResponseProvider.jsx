@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useContext } from 'react';
+import React, { createContext, useReducer, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const ResponseContext = createContext();
@@ -22,7 +22,10 @@ export function reducer(state, action) {
     case 'SET_RES':
       return { ...state, res: action.payload };
     case 'ADD_REQUESTS':
-      return { ...state, requests: [...state.requests, action.payload] };
+      localStorage.setItem('requests', JSON.stringify([...state.requests, action.payload]));
+      return { ...state, requests: [...state.requests, action.payload] };    
+    case 'LOAD_REQUESTS':
+      return { ...state, requests: action.payload };
     default:
       return state;
   }
@@ -30,6 +33,11 @@ export function reducer(state, action) {
 
 export const ResponseProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    const storedReqs = JSON.parse(localStorage.getItem('requests'));
+    if(storedReqs) return dispatch({ type: 'LOAD_REQUESTS', payload: storedReqs });
+  }, []);
 
   return (
     <ResponseContext.Provider value={{ state, dispatch }}>

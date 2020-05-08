@@ -23,7 +23,6 @@ const Form = () => {
     event.preventDefault();
     fetchResponse(url, method, body)
       .then(res => {
-        console.log(res);
         if(res.ok) {
           dispatch({ type: 'SET_RES', payload: res });
           dispatch({ type: 'ADD_REQUESTS', payload: { url: url, method: method, body: body } });

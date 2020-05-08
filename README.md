@@ -19,11 +19,11 @@
 # --------------------
 
 ## components
-- [] - App
+- [X] - App
 - [X] - Form
 - [X] - Display
 - [X] - History
-- [] - Header
+- [X] - Header
 - [] - Auth?
 
 ## hooks/containers
@@ -44,8 +44,11 @@
 - fetchResponse
 - Display
 - History
-
 - Header
 - localStorage
+
+- No duplicates
 - Auth
 - Styling
+- Hook Testing
+- Service Testing
