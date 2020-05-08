@@ -21,8 +21,8 @@
 ## components
 - [] - App
 - [X] - Form
-- [] - Display
-- [] - History
+- [X] - Display
+- [X] - History
 - [] - Header
 - [] - Auth?
 
@@ -43,8 +43,9 @@
 - FormProvider
 - fetchResponse
 - Display
-
 - History
+
 - Header
 - localStorage
 - Auth
+- Styling

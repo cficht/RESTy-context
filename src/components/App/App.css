@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+.Header {
+  display: flex;
+  background-color: greenyellow;
+}
+
 .Main {
   display: flex;
   background-color: blue;
