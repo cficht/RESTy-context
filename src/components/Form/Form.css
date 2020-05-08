@@ -1,0 +1,70 @@
+.Form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: hotpink;
+
+  form {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .Left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    width: 40%;
+    text-align: center;
+    background-color: indianred;
+
+    input[type=text] {
+      margin: 10px;
+      width: 80%;
+    }
+
+    input[type=radio] {
+      margin: 0px 10px 0px 10px;
+    }
+
+    textarea {
+      margin: 10px;
+      width: 80%;
+      height: 100px;
+    }
+
+    button {
+      width: 20%;
+    }
+  }
+
+  .Right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    width: 40%;
+    background-color: indigo;
+  }
+
+  .AuthTop {
+    width: 100%;
+    text-align: center;
+    background-color: khaki;
+  }
+
+  .AuthBot {
+    width: 100%;
+    padding: 50px;
+    text-align: center;
+    background-color: green;
+
+    input{
+      margin: 10px;
+    }
+  }
+}

@@ -8,7 +8,11 @@ const initialState = {
   method: '',
   body: '',
   res: {},
-  requests: []
+  requests: [],
+  auth: 'none',
+  username: '',
+  password: '',
+  token: ''
 };
 
 const match = (newRequest, storedRequests) => {
@@ -33,6 +37,14 @@ export function reducer(state, action) {
       return { ...state, requests: [...state.requests, action.payload] };    
     case 'LOAD_REQUESTS':
       return { ...state, requests: action.payload };
+    case 'SET_AUTH':
+      return { ...state, auth: action.payload };
+    case 'SET_USERNAME':
+      return { ...state, username: action.payload };
+    case 'SET_PASSWORD':
+      return { ...state, password: action.payload };
+    case 'SET_TOKEN':
+      return { ...state, token: action.payload };
     default:
       return state;
   }
@@ -90,4 +102,9 @@ export const useRes = () => {
 export const useRequests = () => {
   const { requests } = useGlobalState();
   return requests;
+};
+
+export const useAuth = () => {
+  const { auth } = useGlobalState();
+  return auth;
 };
