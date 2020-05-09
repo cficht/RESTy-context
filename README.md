@@ -48,8 +48,8 @@
 - localStorage
 - No duplicates
 - Click to load
-
 - Auth (Dropdown?)
+
 - handlers in Provider?
 - Styling
 - Hook Testing

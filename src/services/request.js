@@ -16,7 +16,6 @@ export const fetchResponse = (url, method, body, headers) => {
             response: response,
             ok: res.ok
           };       
-        })
-        .catch(error => error);    
+        });  
     });
 };
