@@ -32,12 +32,6 @@ export function reducer(state, action) {
       return { ...state, body: action.payload };
     case 'SET_RES':
       return { ...state, res: action.payload };
-    case 'ADD_REQUESTS':
-      if(match(action.payload, state.requests)) return { ...state, requests: [...state.requests] };  
-      localStorage.setItem('requests', JSON.stringify([...state.requests, action.payload]));
-      return { ...state, requests: [...state.requests, action.payload] };    
-    case 'LOAD_REQUESTS':
-      return { ...state, requests: action.payload };
     case 'SET_AUTH':
       return { ...state, auth: action.payload };
     case 'SET_USERNAME':
@@ -46,6 +40,12 @@ export function reducer(state, action) {
       return { ...state, password: action.payload };
     case 'SET_TOKEN':
       return { ...state, token: action.payload };
+    case 'ADD_REQUESTS':
+      if(match(action.payload, state.requests)) return { ...state, requests: [...state.requests] };  
+      localStorage.setItem('requests', JSON.stringify([...state.requests, action.payload]));
+      return { ...state, requests: [...state.requests, action.payload] };    
+    case 'LOAD_REQUESTS':
+      return { ...state, requests: action.payload };
     case 'RESET_REQUESTS':
       return { ...state, requests: action.payload };
     default:
