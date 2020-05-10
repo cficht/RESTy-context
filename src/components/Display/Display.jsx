@@ -5,6 +5,7 @@ import styles from './Display.css';
 
 const Display = () => {
   const res = useRes();
+  
   return (
     <section className={styles.Display}>
       <ReactJson src={res.headers} theme="tomorrow" name="Headers"/>
