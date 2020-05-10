@@ -6,6 +6,7 @@ exports[`Form component renders Form 1`] = `
     Object {
       "dispatch": [Function],
       "handleChange": [Function],
+      "handleClear": [Function],
       "handleClick": [Function],
       "handleSubmit": [Function],
       "state": Object {

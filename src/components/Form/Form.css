@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  background-color: hotpink;
 
   form {
     display: flex;
@@ -18,8 +17,11 @@
     margin: 10px;
     padding: 10px;
     width: 40%;
+    border: 2px solid #232020;
+    border-radius: 10px;
+    background-color: #3a3535;
+    color: white;
     text-align: center;
-    background-color: indianred;
 
     input[type=text] {
       margin: 10px;
@@ -37,7 +39,10 @@
     }
 
     button {
-      width: 20%;
+      border: 2px solid #e15e07;
+      border-radius: 10px;
+      background-color: #ff7315;
+      color: white;
     }
   }
 
@@ -47,21 +52,24 @@
     align-items: center;
     margin: 10px;
     padding: 10px;
-    width: 40%;
-    background-color: indigo;
+    width: 40%;  
+    border: 2px solid #232020;
+    border-radius: 10px;
+    background-color: #3a3535;
+    color: white;
+    text-align: center;
   }
 
   .AuthTop {
     width: 100%;
     text-align: center;
-    background-color: khaki;
   }
 
   .AuthBot {
     width: 100%;
     padding: 50px;
     text-align: center;
-    background-color: green;
+
 
     input{
       margin: 10px;

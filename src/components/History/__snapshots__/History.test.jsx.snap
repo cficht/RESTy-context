@@ -6,6 +6,7 @@ exports[`History component renders History 1`] = `
     Object {
       "dispatch": [Function],
       "handleChange": [Function],
+      "handleClear": [Function],
       "handleClick": [Function],
       "handleSubmit": [Function],
       "state": Object {

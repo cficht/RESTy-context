@@ -2,22 +2,34 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: #3a3535;
+}
+
 .Header {
   display: flex;
-  background-color: greenyellow;
+  justify-content: center;
+  border: 2px solid #e15e07;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #ff7315;
 }
 
 .Main {
   display: flex;
-  background-color: blue;
 
   .Left{
     width: 25%;
-    background-color: red;
   }
 
   .Right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 75%;
-    background-color: green;
+    border: 2px solid #e15e07;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: #ff7315;
   }
 }

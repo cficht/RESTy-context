@@ -46,6 +46,8 @@ export function reducer(state, action) {
       return { ...state, password: action.payload };
     case 'SET_TOKEN':
       return { ...state, token: action.payload };
+    case 'RESET_REQUESTS':
+      return { ...state, requests: action.payload };
     default:
       return state;
   }
@@ -85,8 +87,13 @@ export const ResponseProvider = ({ children }) => {
     dispatch({ type: 'SET_BODY', payload: body });
   };
 
+  const handleClear = () => {
+    localStorage.clear();
+    dispatch({ type: 'RESET_REQUESTS', payload: [] });
+  };
+
   return (
-    <ResponseContext.Provider value={{ state, dispatch, handleChange, handleSubmit, handleClick }}>
+    <ResponseContext.Provider value={{ state, dispatch, handleChange, handleSubmit, handleClick, handleClear }}>
       {children}
     </ResponseContext.Provider>
   );
@@ -149,4 +156,9 @@ export const useHandleSubmit = () => {
 export const useHandleClick = () => {
   const { handleClick } = useContext(ResponseContext);
   return handleClick;
+};
+
+export const useHandleClear = () => {
+  const { handleClear } = useContext(ResponseContext);
+  return handleClear;
 };

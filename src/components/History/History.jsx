@@ -1,9 +1,11 @@
 import React from 'react';
-import { useRequests, useHandleClick } from '../../hooks/ResponseProvider';
+import { useRequests, useHandleClick, useHandleClear } from '../../hooks/ResponseProvider';
+import styles from './History.css';
 
 const History = () => {
   const requests = useRequests();
   const handleClick = useHandleClick();
+  const handleClear = useHandleClear();
 
   const requestNodes = requests.map(request => {
     const home = request.url.split('/')[2];
@@ -17,12 +19,13 @@ const History = () => {
   });
 
   return (
-    <>
+    <section className={styles.History}>
       <h1>HISTORY</h1>
       <ul>
         {requestNodes}
       </ul>
-    </>
+      <button onClick={handleClear}>Clear</button>
+    </section>
   );
 };
 

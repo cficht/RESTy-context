@@ -47,8 +47,9 @@
 - Click to load
 - Auth (Dropdown?)
 - handlers in Provider
+- Styling (Color palette, margin, padding)
 
-- Styling
+- Styling (fonts)
 - Hook Testing
 - Service Testing
 - Refactor

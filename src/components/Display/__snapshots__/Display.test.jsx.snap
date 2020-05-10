@@ -6,6 +6,7 @@ exports[`Display component renders Display 1`] = `
     Object {
       "dispatch": [Function],
       "handleChange": [Function],
+      "handleClear": [Function],
       "handleClick": [Function],
       "handleSubmit": [Function],
       "state": Object {
