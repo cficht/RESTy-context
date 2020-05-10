@@ -48,8 +48,8 @@
 - Auth (Dropdown?)
 - handlers in Provider
 - Styling (Color palette, margin, padding)
+- Styling (fonts, font sizes, font colors)
 
-- Styling (fonts)
 - Hook Testing
 - Service Testing
 - Refactor
