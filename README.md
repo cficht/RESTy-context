@@ -50,6 +50,6 @@
 - Styling (Color palette, margin, padding)
 - Styling (fonts, font sizes, font colors)
 - Service Testing
-
 - Hook Testing
+
 - Refactor

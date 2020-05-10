@@ -109,13 +109,13 @@ describe('fetchResponse service', () => {
       json: () => Promise.resolve()
     }));
 
-    const headers = 'Bearer sYuM2biPF5AAAAAAAAAA2AJbaaoyGRjh7V5iJGM7sIuA2x9qjIwN8_8QuzgincTX';
+    const headers = 'Bearer sdfsss235sdgdsgfdsf246t46345_gdsgdsg';
     return fetchResponse('https://api.dropboxapi.com/2/files/get_temporary_link', 'POST', { 'path': '/WW Drumloop 80bpm.wav' }, headers)
       .then(() => {
         expect(global.fetch).toHaveBeenCalledWith('https://api.dropboxapi.com/2/files/get_temporary_link', {
           method: 'POST',
           headers: {
-            'Authorization': 'Bearer sYuM2biPF5AAAAAAAAAA2AJbaaoyGRjh7V5iJGM7sIuA2x9qjIwN8_8QuzgincTX',
+            'Authorization': 'Bearer sdfsss235sdgdsgfdsf246t46345_gdsgdsg',
             'Content-Type': 'application/json'
           },
           body: { path: '/WW Drumloop 80bpm.wav' }
