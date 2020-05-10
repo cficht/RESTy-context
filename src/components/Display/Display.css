@@ -1,0 +1,8 @@
+.Display {
+  margin: 20px;
+  width: 80%;
+  border: 5px solid black;
+  border-radius: 10px;
+  overflow: auto;
+  background-color: #1D2021;
+}

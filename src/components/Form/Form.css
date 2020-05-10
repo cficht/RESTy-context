@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
+.Form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  form {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .Left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    width: 40%;
+    border: 2px solid #232020;
+    border-radius: 10px;
+    background-color: #3a3535;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+
+    input[type=text] {
+      margin: 10px;
+      width: 80%;
+      font-size: 14px;
+    }
+
+    input[type=radio] {
+      margin: 0px 10px 0px 10px;
+    }
+
+    textarea {
+      margin: 10px;
+      width: 80%;
+      height: 100px;
+      font-size: 14px;
+    }
+
+    button {
+      margin: 10px;
+      border: 2px solid #e15e07;
+      border-radius: 10px;
+      background-color: #ff7315;
+      color: white;
+    }
+  }
+
+  .Right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    width: 40%;  
+    border: 2px solid #232020;
+    border-radius: 10px;
+    background-color: #3a3535;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  .AuthTop {
+    width: 100%;
+    text-align: center;
+
+    h3 {
+      margin-block-start: .7em;
+      margin-block-end: .7em;
+    }
+  }
+
+  .AuthBot {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    text-align: center;
+
+
+    input{
+      font-size: 14px;
+    }
+
+    input[name=SET_TOKEN]{
+      width: 100%;
+    }
+  }
+}
