@@ -24,19 +24,16 @@
 - [X] - Display
 - [X] - History
 - [X] - Header
-- [] - Auth?
+- [X] - Auth?
 
 ## hooks/containers
-- [] - FormProvider
+- [X] - FormProvider
 
 ## services
 - [X] - api (fetch(url, object with headers, body))
   * [X] - fetchResponse
 
 # --------------------
-
-## API
-
 
 ## Steps
 - Initial Form
@@ -49,8 +46,9 @@
 - No duplicates
 - Click to load
 - Auth (Dropdown?)
+- handlers in Provider
 
-- handlers in Provider?
 - Styling
 - Hook Testing
 - Service Testing
+- Refactor

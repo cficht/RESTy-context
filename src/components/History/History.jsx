@@ -1,15 +1,9 @@
 import React from 'react';
-import { useRequests, useDispatch } from '../../hooks/ResponseProvider';
+import { useRequests, useHandleClick } from '../../hooks/ResponseProvider';
 
 const History = () => {
   const requests = useRequests();
-  const dispatch = useDispatch();
-
-  const handleClick = ({ url, method, body }) => {
-    dispatch({ type: 'SET_URL', payload: url });
-    dispatch({ type: 'SET_METHOD', payload: method });
-    dispatch({ type: 'SET_BODY', payload: body });
-  };
+  const handleClick = useHandleClick();
 
   const requestNodes = requests.map(request => {
     const home = request.url.split('/')[2];

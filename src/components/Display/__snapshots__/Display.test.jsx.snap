@@ -5,6 +5,9 @@ exports[`Display component renders Display 1`] = `
   value={
     Object {
       "dispatch": [Function],
+      "handleChange": [Function],
+      "handleClick": [Function],
+      "handleSubmit": [Function],
       "state": Object {
         "auth": "none",
         "body": "",

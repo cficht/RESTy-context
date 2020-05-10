@@ -1,5 +1,6 @@
 import React, { createContext, useReducer, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { fetchResponse } from '../services/request';
 
 const ResponseContext = createContext();
 
@@ -52,14 +53,40 @@ export function reducer(state, action) {
 
 export const ResponseProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const { url, method, body, auth, username, password, token } = state;
 
   useEffect(() => {
     const storedReqs = JSON.parse(localStorage.getItem('requests'));
     if(storedReqs) return dispatch({ type: 'LOAD_REQUESTS', payload: storedReqs });
   }, []);
 
+  const handleChange = ({ target }) => {
+    dispatch({ type: target.name, payload: target.value });
+  };
+
+  const handleSubmit = () => {
+    event.preventDefault();
+    const base64 = require('base-64');
+    let headers;
+    if(auth === 'basic') headers = `Basic ${base64.encode(`${username}:${password}`)}`;
+    if(auth === 'bearer') headers = `Bearer ${token}`;
+    fetchResponse(url, method, body, headers)
+      .then(res => {
+        dispatch({ type: 'SET_RES', payload: res });
+        if(res.ok) {
+          dispatch({ type: 'ADD_REQUESTS', payload: { url: url, method: method, body: body } });
+        }
+      });
+  };
+
+  const handleClick = ({ url, method, body }) => {
+    dispatch({ type: 'SET_URL', payload: url });
+    dispatch({ type: 'SET_METHOD', payload: method });
+    dispatch({ type: 'SET_BODY', payload: body });
+  };
+
   return (
-    <ResponseContext.Provider value={{ state, dispatch }}>
+    <ResponseContext.Provider value={{ state, dispatch, handleChange, handleSubmit, handleClick }}>
       {children}
     </ResponseContext.Provider>
   );
@@ -107,4 +134,19 @@ export const useRequests = () => {
 export const useAuth = () => {
   const { auth } = useGlobalState();
   return auth;
+};
+
+export const useHandleChange = () => {
+  const { handleChange } = useContext(ResponseContext);
+  return handleChange;
+};
+
+export const useHandleSubmit = () => {
+  const { handleSubmit } = useContext(ResponseContext);
+  return handleSubmit;
+};
+
+export const useHandleClick = () => {
+  const { handleClick } = useContext(ResponseContext);
+  return handleClick;
 };

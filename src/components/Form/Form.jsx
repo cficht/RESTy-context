@@ -1,30 +1,11 @@
 import React from 'react';
-import { useGlobalState, useDispatch } from '../../hooks/ResponseProvider';
-import { fetchResponse } from '../../services/request';
+import { useGlobalState, useHandleChange, useHandleSubmit } from '../../hooks/ResponseProvider';
 import styles from './Form.css';
 
 const Form = () => {
   const { url, method, body, auth, username, password, token } = useGlobalState();
-  const dispatch = useDispatch();
-
-  const handleChange = ({ target }) => {
-    dispatch({ type: target.name, payload: target.value });
-  };
-
-  const handleSubmit = () => {
-    const base64 = require('base-64');
-    let headers;
-    event.preventDefault();
-    if(auth === 'basic') headers = `Basic ${base64.encode(`${username}:${password}`)}`;
-    if(auth === 'bearer') headers = `Bearer ${token}`;
-    fetchResponse(url, method, body, headers)
-      .then(res => {
-        dispatch({ type: 'SET_RES', payload: res });
-        if(res.ok) {
-          dispatch({ type: 'ADD_REQUESTS', payload: { url: url, method: method, body: body } });
-        }
-      });
-  };
+  const handleChange = useHandleChange();
+  const handleSubmit = useHandleSubmit();
 
   const authType = () => {
     if(auth === 'basic')
